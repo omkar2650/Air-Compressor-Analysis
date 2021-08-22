@@ -25,6 +25,7 @@ try:
         "run_hours": 10
     }
 
+
 except FileNotFoundError:
 
     DATA = {
@@ -42,7 +43,7 @@ except FileNotFoundError:
         "reading_unix_timestamp__max": 0,
         "tariff": 0,
         "motor_efficiency": 0,
-        "rated_power": 0,
+        "rated_power": 1,
         "run_hours": 0
     }
 

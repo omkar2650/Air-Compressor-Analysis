@@ -1,7 +1,7 @@
 import json
 
 try:
-    jsonfile = open('F:\Files send by ganesh\sub_meter_data1.json', 'r')
+    jsonfile = open('F:\Files send by ganesh\sub_meter_data.json', 'r')
     jsonData = jsonfile.read()
     obj = json.loads(jsonData)
     # breakpoint()
@@ -35,7 +35,7 @@ def maximum_active_power():
 
 
 def percentage_loading():
-    return ((obj['active_power__avg'] / 1000) * (obj['motor_efficiency'] / obj['rated_power'])) * 100
+    return ((obj['active_power__avg'] / 1000) * obj['motor_efficiency'] / obj['rated_power']) * 100
 
 
 class AirCompressorAnalysis:
@@ -53,9 +53,10 @@ class AirCompressorAnalysis:
         return self.energy_consumption() * 0.00082
 
 
-Total = AirCompressorAnalysis(obj['energy_received__max'], obj['energy_received__min'])
-Total.energy_consumption()
+# Total = AirCompressorAnalysis(obj['energy_received__max'], obj['energy_received__min'])
+# Total.energy_consumption()
 # Total.EnergyCost()
-# Total.GHGEmission()
-maximum_active_power()
-percentage_loading()
+# Total.ghg_emission()
+# maximum_active_power()
+# percentage_loading()
+
